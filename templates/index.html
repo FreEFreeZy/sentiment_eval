@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Моя страница</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- 1. Общая база -->
+  <link rel="stylesheet" href="../styles/base.css">
+
+  <!-- 1 секция -->
+  <link rel="stylesheet" href="../styles/home_1.css">
+
+  <!-- 2 секция  -->
+  <link rel="stylesheet" href="../styles/advantages_2.css">
+
+    <!-- 3 секция  -->
+  <link rel="stylesheet" href="../styles/go_3.css">
+
+    <!-- 4 секция  -->
+    <link rel="stylesheet" href="../styles/model_4.css">
+
+    <!-- 5 секция  -->
+     <link rel="stylesheet" href="../styles/us_5.css">
+
+</head>
+
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-block">
+        <img src="../img/logo.png" alt="Логотип" />
+        <div class="logo-text">
+          Проект трека<br />
+          Правительства Москвы
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">О сервисе</a>
+        <a href="#model">Модель</a>
+        <a href="#contacts">Контакты</a>
+        <button class="btn-login">Войти</button>
+      </nav>
+    </header>
+
+    <!-- MAIN: несколько секций -->
+    <main>
+      <!-- Первая страница (hero) -->
+      <section class="hero" id="home">
+        <section class="hero-text">
+        <h1 class="hero-title">Мы анализируем настроение текстов</h1>
+        <p class="hero-subtitle">
+          Сервис классифицирует настроение текста: от позитивного до негативного.
+        </p>
+        <p class="hero-subtitle">
+          Сервис помогает находить токсичные сообщения, отслеживать динамику отзывов и видеть, как люди реагируют на ваши продукты и сервисы.
+        </p>
+        <div class="hero-cta">
+            <a href="index_model.html" class="btn-primary">
+                <span>Начать анализ</span>
+            </a>
+          <a href="#model" class="btn-outline">Подробнее о проекте</a>
+        </div>
+      </section>
+
+        <div class="hero-image">
+          <img src="../img/hero.png" alt="Иллюстрация сервиса" class="hero-image-main" />
+          <img src="../img/review.png" alt="Окно отзыва" class="hero-image-review" />
+        </div>
+      </section>
+
+      <!-- Вторая страница (красное полотно + змейка карточек) -->
+      <section class="features-section" id="about">
+    <div class="features-section__inner">
+      <!-- Левая колонка с карточками -->
+      <div class="features-section__left">
+        <!-- Верхняя «прозрачная» карточка -->
+        <article class="feature-card feature-card--ghost">
+          <div class="feature-card__icon feature-card__icon--ghost">
+            <!-- сюда можно вставить svg-иконку щита -->
+          </div>
+          <h3 class="feature-card__title">Мгновенный анализ тональности</h3>
+          <p class="feature-card__text">
+            Понимаем, позитивный, нейтральный или негативный перед нами текст.
+          </p>
+          <p class="feature-card__text">
+            Помогаем быстро оценить настроение потока сообщений без ручного чтения.
+          </p>
+        </article>
+
+        <!-- Центральная красная карточка -->
+        <!-- Центральная красная карточка -->
+        <article class="feature-card feature-card--primary feature-card--decor">
+          <div class="feature-card__icon feature-card__icon--primary">
+            <!-- иконка -->
+          </div>
+          <h3 class="feature-card__title feature-card__title--light">
+            Простой веб–интерфейс
+          </h3>
+          <p class="feature-card__text feature-card__text--light">
+            Вставьте текст, нажмите одну кнопку — и сразу увидите результат.
+          </p>
+          <p class="feature-card__text feature-card__text--light">
+            Цветовые метки и графики делают выводы понятными всем,
+            не только разработчикам.
+          </p>
+        </article>
+
+
+        <!-- Нижняя «прозрачная» карточка -->
+        <article class="feature-card feature-card--ghost">
+          <div class="feature-card__icon feature-card__icon--ghost">
+          </div>
+          <h3 class="feature-card__title">Готов к реальным сервисам</h3>
+          <p class="feature-card__text">
+            Подходит для отзывов, обращений граждан, комментариев и чат-ботов.
+          </p>
+          <p class="feature-card__text">
+            Архитектура легко расширяется до API и интеграций
+            с существующими системами.
+          </p>
+        </article>
+      </div>
+
+      <!-- Правая колонка с иллюстрацией -->
+      <div class="features-section__right">
+        <div class="features-hero">
+          <div class="page-home__frame">
+            <!-- Красный фон карточки -->
+            <div class="page-home__card">
+                <div class="page-home__card-bg"></div>
+            </div>
+
+            <!-- Блок с картинками поверх красной карточки -->
+            <div class="page-home__images">
+              <!-- Аналитика -->
+              <img
+                class="page-home__img page-home__img--analytics"
+                src="../img/diagrm.png"
+                alt="The Little Things - Analytics"
+              />
+
+              <!-- Мобильный макет -->
+              <img
+                class="page-home__img page-home__img--mobile"
+                src="../img/heros2.png"
+                alt="Croods Mobile"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+        <!-- 4 страница (красное полотно + змейка карточек) -->
+ <!-- Блок: Техническая реализация анализа тональности -->
+<section id="model" class="sentiment-section">
+  <header class="sentiment-hero">
+    <div class="sentiment-hero__content">
+      <p class="sentiment-hero__eyebrow">Техническая реализация</p>
+      <h1 class="sentiment-hero__title">Анализ тональности текстов</h1>
+      <p class="sentiment-hero__subtitle">
+        Используем русскоязычную модель BERT для анализа тональности текстов.
+      </p>
+      <div class="sentiment-hero__line"></div>
+    </div>
+
+    <div class="sentiment-hero__image-wrapper">
+      <img src="../img/lamp_4.png" alt="Иконка идеи" class="sentiment-hero__image" />
+    </div>
+  </header>
+
+  <main class="sentiment-content">
+    <section class="sentiment-cards">
+      <!-- Карточка: Модель -->
+      <article class="sentiment-card">
+        <div class="sentiment-card__header">
+          <div>
+            <h2 class="sentiment-card__title">Модель</h2>
+              <span class="sentiment-card__label-line"></span>
+          </div>
+        </div>
+        <p class="sentiment-card__text">
+          Базовая модель: RuBERT (BERT, обученный на русскоязычных текстах).<br>
+          Архитектура: трансформер-энкодер, self-attention, 12 слоёв.<br>
+          Поверх BERT добавлен классификатор для трёх классов:
+          позитив / нейтрально / негатив.
+        </p>
+        <div class="sentiment-card__accent"></div>
+      </article>
+
+      <!-- Карточка: Как это работает? -->
+      <article class="sentiment-card">
+        <div class="sentiment-card__header">
+          <div>
+              <h2 class="sentiment-card__title">Как это работает?</h2>
+            <span class="sentiment-card__label-line"></span>
+          </div>
+        </div>
+        <p class="sentiment-card__text">
+          Пользователь вводит текст на сайте.<br>
+          Текст токенизируется и подаётся в модель RuBERT.<br>
+          Классификатор выдаёт вероятности трёх тональностей.<br>
+          Интерфейс показывает результат в виде цветной метки
+          и графика уверенности модели.
+        </p>
+        <div class="sentiment-card__accent"></div>
+      </article>
+
+      <!-- Карточка: Технический стек -->
+      <article class="sentiment-card">
+        <div class="sentiment-card__header">
+          <div>
+              <h2 class="sentiment-card__title">Технический стек</h2>
+            <span class="sentiment-card__label-line"></span>
+          </div>
+        </div>
+        <p class="sentiment-card__text">
+          Python, библиотека Transformers (HuggingFace).<br>
+          Фреймворк для модели: PyTorch.<br>
+          Backend: FastAPI.<br>
+          Frontend: HTML / CSS / JS.
+        </p>
+        <div class="sentiment-card__accent"></div>
+      </article>
+    </section>
+
+    <div class="sentiment-cta">
+      <button class="sentiment-cta__button">
+        <span>Узнать больше</span>
+      </button>
+    </div>
+  </main>
+</section>
+        <!-- 5 страница -->
+  <section class="team-section" id="contacts">
+    <!-- Левая картинка -->
+    <img
+      src="../img/girl_5.png"
+      alt="Команда на лестнице слева"
+      class="team-side-image team-side-image--left"
+    />
+
+    <!-- Правая картинка -->
+    <img
+      src="../img/boys_5.png"
+      alt="Команда на лестнице справа"
+      class="team-side-image team-side-image--right"
+    />
+
+      <img src="../img/pazl1_5.png"
+       alt=""
+       class="team-extra-image team-extra-image--top-right" />
+
+  <!-- НОВАЯ: нижняя справа -->
+  <img src="../img/pazl2_5.png"
+       alt=""
+       class="team-extra-image team-extra-image--bottom-right" />
+<div class="team-panel">
+  <!-- Новый обёрточный блок для содержимого -->
+  <div class="team-panel__content">
+    <header class="team-header">
+      <p class="team-header__title">Команда проекта<br>
+        <span class="team-header__brand">MoodWare</span>
+      </p>
+      <p class="team-header__subtitle">
+        Финансовый университет при Правительстве Российской Федерации, 3 курс
+      </p>
+    </header>
+
+    <div class="team-cards">
+      <!-- 1 -->
+      <article class="team-card team-card--side">
+        <h3 class="team-card__name">Диева Варвара</h3>
+        <p class="team-card__desc">
+          Отвечаю за дизайн и реализацию интерфейса веб-приложения,
+          а также участвую в выборе и дообучении модели для анализа тональности.
+        </p>
+        <div class="team-card__photo">фото</div>
+          <a href="https://github.com/dievavar" class="team-card__link"  target="_blank" rel="noopener noreferrer">
+              <span>Ссылка на GitHub</span>
+              <span class="team-card__link-arrow"></span>
+          </a>
+          <a href="https://t.me/dievavar"  class="team-card__telegram"  target="_blank"  rel="noopener noreferrer">
+               @dievavar
+          </a>
+      </article>
+
+      <!-- 2 -->
+      <article class="team-card team-card--center">
+        <div class="team-card__accent-bar"></div>
+        <h3 class="team-card__name">Лихолетов Георгий</h3>
+        <p class="team-card__desc">
+          Отвечаю за серверную часть: API для вызова модели,
+          обмен данными между фронтендом и ML-сервисом,
+          базовую инфраструктуру и деплой.
+        </p>
+        <div class="team-card__photo team-card__photo--accent">фото</div>
+
+       <a href="https://github.com/FreEFreeZy" class="team-card__link"  target="_blank" rel="noopener noreferrer">
+              <span>Ссылка на GitHub</span>
+              <span class="team-card__link-arrow"></span>
+       </a>
+          <a href="https://t.me/freefreezy"  class="team-card__telegram"  target="_blank"  rel="noopener noreferrer">
+               @freefreezy
+          </a>
+      </article>
+
+      <!-- 3 -->
+      <article class="team-card team-card--side">
+        <h3 class="team-card__name">Шалашова Ольга</h3>
+        <p class="team-card__desc">
+          Занимаюсь исследованием и настройкой моделей на базе BERT:
+          выбор датасетов, дообучение и оценка качества классификации тональности.
+        </p>
+        <div class="team-card__photo">фото</div>
+
+        <a href="https://github.com/shalashova-olga" class="team-card__link"  target="_blank" rel="noopener noreferrer">
+              <span>Ссылка на GitHub</span>
+              <span class="team-card__link-arrow"></span>
+        </a>
+           <a href="https://t.me/olya_shalashova"  class="team-card__telegram"  target="_blank"  rel="noopener noreferrer">
+               @olya_shalashova
+          </a>
+      </article>
+    </div>
+  </div>
+
+  <!-- Волна снизу панели -->
+  <svg
+    class="team-panel__wave"
+    viewBox="0 0 1440 120"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#ffffff"
+      d="M0,0 C 180,80 360,-40 720,40 C1080,120 1260,20 1440,60 L1440,120 L0,120 Z"
+    />
+  </svg>
+</div>
+  </section>
+              <!-- CTA-секция -->
+ <section class="cta-section" id="cta">
+  <div class="cta-section__bg">
+    <!-- Велосипед слева, выступает -->
+    <img src="../img/bike_3.png" alt="Велосипед" class="cta-section__bike" />
+
+    <!-- Текст + кнопка -->
+    <div class="cta-section__content">
+      <h2 class="cta-section__title">
+        Готовы проверить настроение текста?
+      </h2>
+      <p class="cta-section__subtitle">
+        Проверьте, как звучат отзывы, обращения граждан или сообщения в чате.
+      </p>
+
+      <a href="index_model.html" class="cta-section__btn">
+          <span>Начать анализ</span>
+          <span class="cta-section__btn-arrow"></span>
+      </a>
+    </div>
+
+    <!-- Стрелка справа сверху -->
+    <img src="../img/strelka_3.png" alt="Стрелка" class="cta-section__arrow" />
+  </div>
+ </section>
+
+  </main>
+    <footer class="footer">
+      © 2025 · Проект трека Правительства Москвы · MoodWare
+    </footer>
+  </div>
+</body>
+</html>

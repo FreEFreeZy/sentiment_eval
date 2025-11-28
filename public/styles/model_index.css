@@ -1,0 +1,442 @@
+/* ====== ОСНОВНОЙ ЭКРАН АНАЛИЗА ====== */
+
+.app-section {
+  position: relative;
+  padding: 20px 0 100px;
+  background: linear-gradient(180deg, #f6f6f6 0%, #ffffff 100%);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1252px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ПОЛОТНО 1: анализ текстов */
+.app-section--analyze {
+  padding: 60px 0 80px;
+  background: linear-gradient(180deg, #f6f6f6 0%, #ffffff 100%);
+}
+
+/* ПОЛОТНО 2: оценка качества */
+.app-section--metrics {
+  padding: 80px 0 100px;
+  background: #ffffff;
+}
+
+.app-between {
+  position: relative;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-between__image {
+  display: block;
+  max-width: 380px;
+  height: auto;
+}
+
+/* Если захочешь немного сдвинуть */
+.app-between__image--left {
+margin-left: -40px;
+margin-top: -100px;
+}
+
+
+/* Заголовок страницы */
+
+.app-hero {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.app-hero__title {
+  font-family: "Poppins", sans-serif;
+   font-size: 35px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #111827;
+      margin: 0 0 8px 0;
+
+
+}
+
+.app-hero__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #6b6b6b;
+  margin: 0;
+
+}
+
+/* Блок-обёртка */
+
+.app-block {
+  margin-bottom: 40px;
+}
+
+
+/* ====== БЛОК 1: Анализ текстов ====== */
+
+.app-block--analyze {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.app-block__left,
+.app-block__right {
+  width: 100%;
+}
+
+.app-block__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #212121;
+  margin: 0 0 8px;
+}
+
+.app-block__text,
+.app-block__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #6b6b6b;
+  margin: 0 0 16px;
+}
+
+.app-block__note {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #c5c5c5;
+  margin-top: 10px;
+}
+
+/* Загрузка файлов */
+
+.app-upload {
+  margin-bottom: 16px;
+}
+
+.app-upload__label {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px dashed rgba(168, 0, 44, 0.4);
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-upload__label:hover {
+  border-color: #a8002c;
+  box-shadow: 0 0 0 1px rgba(168, 0, 44, 0.08);
+}
+
+.app-upload__title {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 4px;
+}
+
+.app-upload__hint {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #c5c5c5;
+}
+
+.app-upload__input {
+  display: none;
+}
+
+/* Поля / select */
+
+.app-field {
+  margin-bottom: 16px;
+}
+
+.app-field__label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-bottom: 6px;
+}
+
+.app-field__select {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #212121;
+  background: #ffffff;
+}
+
+/* Кнопки */
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 10px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app-btn--primary {
+  background: #a8002c;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(168, 0, 44, 0.2);
+}
+
+.app-btn--primary:hover {
+  background: #7b001f;
+}
+
+.app-btn--outline {
+  background: #ffffff;
+  color: #a8002c;
+  border-color: #a8002c;
+}
+
+.app-btn--outline:hover {
+  background: #fff4f7;
+}
+
+/* Карточки */
+
+.app-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(219, 219, 219, 0.7);
+  padding: 20px 20px 18px;
+}
+
+.app-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.app-card__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  margin: 0;
+}
+
+.app-card__tag {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  color: #c5c5c5;
+}
+
+/* Таблица */
+
+.app-table-wrapper {
+  max-height: 220px;
+  overflow: auto;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+}
+
+.app-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.app-table thead {
+  background: #fafafa;
+}
+
+.app-table th,
+.app-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.app-table th {
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+.app-table td {
+  color: #212121;
+}
+
+.app-card__download {
+  margin-top: 12px;
+}
+
+/* Заглушка графика */
+
+.app-card--chart {
+  margin-top: 16px;
+}
+
+.app-chart-placeholder {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.app-chart-bar {
+  position: relative;
+  height: 24px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #212121;
+}
+
+.app-chart-bar--neg {
+  background: rgba(168, 0, 44, 0.12);
+}
+
+.app-chart-bar--neu {
+  background: rgba(197, 197, 197, 0.4);
+}
+
+.app-chart-bar--pos {
+  background: rgba(162, 194, 89, 0.35);
+}
+
+.app-chart-bar__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== БЛОК 2: Метрики ====== */
+
+.app-block--metrics {
+  margin-top: 32px;
+}
+
+.app-block__header-line {
+  margin-bottom: 16px;
+}
+
+.app-metrics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.app-metrics-left,
+.app-metrics-right {
+  width: 100%;
+}
+
+/* Метрики summary */
+
+.app-card--metrics-summary {
+  margin-bottom: 16px;
+}
+
+.app-metrics-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.app-metrics-main__value {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-metrics-main__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.app-metrics-main__number {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #a8002c;
+}
+
+.app-metrics-main__details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #6b6b6b;
+  text-align: right;
+}
+
+/* Confusion matrix */
+
+.app-confusion {
+  margin-top: 6px;
+}
+
+.app-table--confusion th,
+.app-table--confusion td {
+  text-align: center;
+}
+
+.app-table--confusion thead th:first-child {
+  background: transparent;
+}
+
+/* Адаптивное поведение */
+
+@media (max-width: 992px) {
+  .app-block--analyze,
+  .app-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card--chart {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-hero__title {
+    font-size: 24px;
+  }
+
+  .app-panel__content {
+    padding: 24px 16px 80px;
+  }
+
+  .app-field__select {
+    font-size: 13px;
+  }
+}
+
