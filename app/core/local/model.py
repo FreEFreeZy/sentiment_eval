@@ -3,7 +3,7 @@ import pandas as pd
 from typing import Optional, Union
 
 class DataFrameModel:
-    def __init__(self, model_path: str):
+    def __init__(self):
         self.model_path = "../../model/sentiment_lr_optuna.joblib"
         self.model = joblib.load(self.model_path)
 
