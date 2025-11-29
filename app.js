@@ -13,8 +13,8 @@ fs.readdirSync(routesPath).forEach(file => {
     if (file.endsWith(".js")) {
         const route = require(path.join(routesPath, file))
         // если index.js - то роутер обслуживает "/", иначе "/<имя файла без .js>"
-        const routeName = file === 'index.js' ? "/" : `/${file.replace(".js", "")}` 
-        app.use(routeName, route)
+        // const routeName = file === 'index.js' ? "/" : `/${file.replace(".js", "")}` 
+        app.use("/", route)
     }
 })
 

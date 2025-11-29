@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment SPA</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+
+    <!-- Загрузка CSV -->
+    <div>
+        <label>Загрузить CSV для анализа:</label>
+        <input type="file" id="uploadFile">
+        <button id="btnUpload">Загрузить</button>
+    </div>
+
+    <!-- Предсказание -->
+    <div>
+        <button id="btnPredict" disabled>Предсказать</button>
+        <button id="btnDownload" disabled>Скачать результаты</button>
+    </div>
+
+    <!-- Оценка модели -->
+    <div>
+        <label>Загрузить CSV с истинными метками:</label>
+        <input type="file" id="validateFile">
+        <button id="btnEvaluate">Оценить модель</button>
+    </div>
+
+    <!-- Вывод текста -->
+    <pre id="output"></pre>
+
+    <!-- Таблица предсказаний -->
+    <table id="resultsTable" style="display:none">
+        <thead>
+            <tr id="tableHeader"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="../scripts/model.js"></script>
+</body>
+</html>
