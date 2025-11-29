@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.v1.routing import sentiment_router, util_router
+from app.api import routers
 
 app = FastAPI(
     version="0.1.0",
@@ -7,8 +7,8 @@ app = FastAPI(
     description="Service for evaluating emotion from text"
 )
 
-app.include_router(sentiment_router.router)
-app.include_router(util_router.router)
+for router in routers:
+    app.include_router(router)
 
 if __name__ == "__main__":
     import uvicorn
@@ -21,4 +21,3 @@ if __name__ == "__main__":
         ssl_keyfile="../ssl/localhost-key.pem",
         ssl_certfile="../ssl/localhost.pem"
     )
-
