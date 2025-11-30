@@ -13,22 +13,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 55px;      /* если ещё не задавала */
-  height: 55px;
+  width: 70px;      /* было 55px */
+  height: 70px;     /* было 55px */
   border-radius: 50%;
   background: #f6f6f6;
-  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-
-  margin-left: 0px; /* ← Двигаем стрелку правее */
 }
 
 .header-back-array img {
-  width: 25px;
-  height: 25px;
+  width: 40px;   /* было 50px, но можно подбирать */
+  height: auto;  /* чтобы не искажалось */
   object-fit: contain;
 }
+
 
     .logo-block {
       display: flex;

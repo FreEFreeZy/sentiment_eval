@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  sentiment-frontend:
+    build: .
+    container_name: sentiment-frontend
+    ports:
+      - "3000:3000"  # маппинг порта контейнера на локальный
+    volumes:
+      - .:/app       # чтобы изменения в коде отражались сразу в контейнере
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped

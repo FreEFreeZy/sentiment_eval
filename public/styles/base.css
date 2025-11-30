@@ -61,4 +61,34 @@ main > section + section {
 
 html {
   scroll-behavior: smooth;
+
 }
+
+/* кнопка "наверх" */
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #a8002c;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(168, 0, 44, 0.3);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* когда видима */
+.scroll-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
