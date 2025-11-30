@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: sentiment_app
+    ports:
+      - "8443:8443"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: python app/main.py

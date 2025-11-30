@@ -1,50 +1,34 @@
 import joblib
 import pandas as pd
-from typing import Optional, Union
+from .model_preprocessing import preprocess_test_df
+from pathlib import Path
 
 class DataFrameModel:
     def __init__(self):
-        self.model_path = "../../model/sentiment_lr_optuna.joblib"
+        self.project_root = Path(__file__).parent.parent.parent.parent
+        self.model_path = self.project_root / "app" / "model" / "sentiment_lr_optuna.joblib"
+        if not self.model_path.exists():
+            self.model_path = (self.project_root / "model" / "sentiment_lr_optuna.joblib")
         self.model = joblib.load(self.model_path)
+        self.classes = list(self.model.classes_)
 
-    def predict(self, X: pd.DataFrame) -> pd.Series:
-        if self.model is None:
-            raise ValueError("Модель не загружена")
-
-        predictions_array = self.model.predict(X)
-        return pd.Series(predictions_array, index=X.index, name='predictions')
-
-    def predict_proba(self, X: pd.DataFrame) -> Union[pd.DataFrame, None]:
-        if self.model is None:
-            raise ValueError("Модель не загружена")
-
-        if hasattr(self.model, 'predict_proba'):
-            probabilities = self.model.predict_proba(X)
-            prob_df = pd.DataFrame(
-                probabilities,
-                columns=[f'class_{i}' for i in range(probabilities.shape[1])],
-                index=X.index
-            )
-
-            return prob_df
-        else:
-            print("Данная модель не поддерживает predict_proba")
+    def predict(self, df: pd.DataFrame) -> pd.DataFrame | None:
+        required = {"ID", "text", "src"}
+        missing = required - set(df.columns)
+        if missing:
             return None
+        df_proc = preprocess_test_df(df)
 
-    def get_feature_names(self) -> Optional[list]:
-        if hasattr(self.model, 'feature_names_in_'):
-            return list(self.model.feature_names_in_)
-        return None
+        texts_proc = df_proc["text"].tolist()
 
-    def validate_features(self, X: pd.DataFrame) -> bool:
-        expected_features = self.get_feature_names()
-        if expected_features is None:
-            return True
+        preds = self.model.predict(texts_proc)
 
-        if list(X.columns) != expected_features:
-            print(f"Предупреждение: Фичи не совпадают!")
-            print(f"Ожидалось: {expected_features}")
-            print(f"Получено:  {list(X.columns)}")
-            return False
+        # Собираем итоговый датафрейм только с ID и label
+        result_df = pd.DataFrame({
+            "ID": df["ID"],
+            "label": preds.astype(int),
+        })
 
-        return True
+        return result_df
+
+model = DataFrameModel()

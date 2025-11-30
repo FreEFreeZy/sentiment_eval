@@ -6,3 +6,10 @@
 в папке проекта:
 ```bash
 ./setup.sh
+```
+
+через докер:
+```bash
+docker build -t sentiment-app .
+docker compose up
+```

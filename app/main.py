@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.api import routers
+import os
 
 app = FastAPI(
     version="0.1.0",
@@ -13,11 +14,12 @@ for router in routers:
 if __name__ == "__main__":
     import uvicorn
     from app.core.local.settings import settings
+    ssl_dir = os.path.join(os.path.dirname(__file__), "ssl")
     uvicorn.run(
         "main:app",
         host=settings.server_host,
         port=settings.server_port,
         reload=True,
-        ssl_keyfile="../ssl/localhost-key.pem",
-        ssl_certfile="../ssl/localhost.pem"
+        ssl_keyfile=os.path.join(ssl_dir,"localhost-key.pem"),
+        ssl_certfile=os.path.join(ssl_dir, "localhost.pem")
     )
